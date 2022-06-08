@@ -19,4 +19,5 @@ router.delete("/food/:id", FoodController.delete_food);
 
 //USER
 router.post("/user/register", authController.register);
+router.post("/user/login", authController.login);
 module.exports = router;
