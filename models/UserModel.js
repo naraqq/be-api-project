@@ -1,33 +1,34 @@
 const mongoose = require("mongoose");
 const User = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+  _id: {
+    type: String,
+  },
   name: {
     type: String,
-    required: [true, "Name is required!"],
   },
   email: {
     type: String,
-    unique: true,
-    required: [true, "Color is required!"],
   },
   phone: {
-    type: Number,
-    minimum: 0,
-    required: [true, "Phone is required!"],
+    type: String,
   },
   password: {
     type: String,
-    required: [true, "Password is required!"],
   },
-  role_id: {
-    type: Number,
-    required: [true, "Password is required!"],
-  },
-  created_date: {
-    type: Date,
-  },
-  last_activity: {
-    type: Date,
+  address: {
+    type: Object,
+    district: {
+      type: String,
+    },
+    Khoroo: {
+      type: String,
+    },
+    Apartment: {
+      type: String,
+    },
+    additional: {
+      type: String,
+    },
   },
 });
 module.exports = mongoose.model("user", User);
